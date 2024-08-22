@@ -114,3 +114,4 @@ A função salvarUser é projetada para coletar dados dos campos de entrada, val
 document.getElementById('nomeUser').value: Obtém o valor do campo de entrada com o id nomeUser. O value é a string que o usuário digitou no campo.  
 document.getElementById('emailUser').value: Obtém o valor do campo de entrada com o id emailUser.  
 Essas duas variáveis (nomeUser e email) armazenam os dados que o usuário insere nos campos correspondentes do formulário.  
+
