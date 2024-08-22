@@ -99,19 +99,36 @@ Agora iremos ver o resultado com nome salvo:
 • class="btn btn-warning" atribui classes CSS ao botão, que geralmente são usadas em frameworks como Bootstrap para estilizar o botão (neste caso, como um botão de aviso ou atenção).  
 • O texto "SALVAR" será exibido no botão, indicando ao usuário que este botão serve para salvar alguma informação.  
 
-![Codigo-Email](img/Codigo-Email.png)
+## validação de email: 
 
-## Email User
+![checar-email](img/checar-email.png)
 
-![Email-User](img/email.user.png)
+## Explicação Detalhada: 
 
-## Explicação:
- Função salvarUser:  
-A função salvarUser é projetada para coletar dados dos campos de entrada, validar esses dados e, se forem válidos, processá-los e atualizar a interface do usuário. Vamos analisar detalhadamente:
+1- definição da função:  
 
-1. Obtendo Valores dos Campos de Entrada:  
+Esta linha define uma nova função chamada salvarUser. O código dentro das chaves {} será executado quando a função for chamada.  
 
-document.getElementById('nomeUser').value: Obtém o valor do campo de entrada com o id nomeUser. O value é a string que o usuário digitou no campo.  
-document.getElementById('emailUser').value: Obtém o valor do campo de entrada com o id emailUser.  
-Essas duas variáveis (nomeUser e email) armazenam os dados que o usuário insere nos campos correspondentes do formulário.  
+2- Obtenção dos Valores dos Campos:  
+
+Estas linhas obtêm os valores dos campos de entrada no formulário. document.getElementById('nomeUser') seleciona o elemento com o ID nomeUser, e .value obtém o valor inserido pelo usuário nesse campo. O mesmo se aplica ao campo emailUser.  
+
+3-Validação do E-mail:  
+
+Este bloco de código verifica se o e-mail é válido:
+
+document.getElementById('emailUser').value == "" verifica se o campo de e-mail está vazio.  
+document.getElementById('emailUser').value.indexOf('@') == -1 verifica se o caractere @ está presente no e-mail.     
+document.getElementById('emailUser').value.indexOf('.') == -1 verifica se o caractere . está presente no e-mail.   
+Se qualquer uma dessas condições for verdadeira, isso indica que o e-mail é inválido.  
+
+4- Exibição da Mensagem de Alerta e Retorno:  
+
+alert("Por favor, informar um E-mail válido"); exibe uma mensagem de alerta para o usuário.
+return false; encerra a execução da função e indica que a validação falhou. Em contextos de formulários, isso pode impedir que o formulário seja enviado.  
+
+##  Observações
+Validação do E-mail: A validação implementada é bastante simples e pode não cobrir todos os casos de e-mails válidos, mas é suficiente para um exemplo básico.  
+Uso do return false: Em muitos casos, você usaria return false para evitar o envio do formulário, mas isso pode precisar de ajustes dependendo do contexto onde a função salvarUser é utilizada.  
+
 
